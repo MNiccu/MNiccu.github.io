@@ -20,9 +20,9 @@
         }
 
         .all {
-            width: 90%;
-            margin: auto;
-            height: 80%;
+            display: flex;
+            flex-wrap: wrap;
+
         }
 
         .toprow {
@@ -31,37 +31,56 @@
         }
 
         .smallbox {
-            height: 260px;
+            height: 20rem;
             background-color: ghostwhite;
-            width: 100%;
-            margin: 10px;
+            width: 16rem;
+            margin: 2rem;
             padding: 15px;
-            
-            
+            flex-grow: 1;
+            position: relative;
+            justify-content: center;
+            align-items: center;
         }
 
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
 
         .bigbox {
             background-color: ghostwhite;
-            width: calc(100% - 50px);
-            margin-left: 10px;
-            padding: 15px;
+            width: 100%;
+            margin: 2rem;
+            padding: 10px;
             height: 260px;
-            margin-bottom: 30px;
-            
-            
-        }
-        button {
-            
-            border: 1px solid black;
-            border-radius: 4px;
-            font-size: 20px; 
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 2rem;
+
 
         }
-      .bigbox #laptopimage {
-           position: relative;
-           left: 200px;
-       }
+
+        button {
+
+            border: 1px solid black;
+            border-radius: 4px;
+            font-size: 14px;
+
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 1rem;
+        }
 
         button:hover {
             background-color: cornsilk;
@@ -73,11 +92,12 @@
 
         .loanbutton {
             background-color: salmon;
+
         }
 
         .workbutton {
             background-color: skyblue;
-            ;
+
         }
 
         .repaybutton {
@@ -86,9 +106,8 @@
 
         .buybutton {
             background-color: mediumseagreen;
-        }
 
-        
+        }
     </style>
 </head>
 
@@ -98,39 +117,45 @@
     </div>
 
     <div class="all">
-        <div class="toprow">
-            <div class="smallbox" id="bankbox">
-                <h4>Bank</h4>
-                <p>Balance</p>
-                <p id="balance" name="balance"></p>
-                <p style="visibility: hidden;" id="loanTitle">Your loan: </p>
-                <p style="visibility: hidden;" id="outstandingLoan"></p>
-                <button class="loanbutton" id="loan" onclick="takeLoan()">Get a loan</button>
 
-            </div>
-
-            <div class="smallbox" id="workbox">
-                <h4>Work</h4>
-                <p>Pay</p>
-                <p id="pay">€</p>
-                <button class="bankbutton" id="bank" onclick="bankMoney()">bank</button>
-                <button class="workbutton" id="work" onclick="work()">work</button>
-                <button class="repaybutton" id="repay" style="visibility: hidden;" onclick="repayLoan()">repay loan</button>
-            </div>
-            <div class="smallbox" id="laptopbox">
-                <h4>Laptops</h4>
-                <select id="laptoplist">
-                </select>
-                <p>Features:</p>
-                <p style="white-space: pre-line;" id="specs">featlist</p>
+        <div class="smallbox" id="bankbox">
+            <h4>Bank</h4>
+            <p>Balance</p>
+            <p id="balance" name="balance"></p>
+            <p style="visibility: hidden;" id="loanTitle">Your loan: </p>
+            <p style="visibility: hidden;" id="outstandingLoan"></p>
+            <div class="buttons">
+                <button class="loanbutton" id="loan" onclick="takeLoan()">GET LOAN</button>
             </div>
         </div>
+
+        <div class="smallbox" id="workbox">
+            <h4>Work</h4>
+            <p>Pay</p>
+            <p id="pay">€</p>
+            <div class="buttons">
+                <button class="bankbutton" id="bank" onclick="bankMoney()">BANK</button>
+                <button class="workbutton" id="work" onclick="work()">WORK</button>
+                <button class="repaybutton" id="repay" style="visibility: hidden;" onclick="repayLoan()">REPAY
+                    LOAN</button>
+            </div>
+        </div>
+        <div class="smallbox" id="laptopbox">
+            <h4>Laptops</h4>
+            <select id="laptoplist">
+            </select>
+            <p>Features:</p>
+            <p style="white-space: pre-line;" id="specs">featlist</p>
+        </div>
+
         <div class="bigbox" id="buybox">
-            <img id="laptopimage" src="imagefail.png" onerror="imgNotFound(event)" width="200">
-            <h3 id="laptopName">Laptop name</h3>
-            <p id="description">this is a description</p>
+            <img class="laptopimage blue" id="laptopimage" src="imagefail.png" onerror="imgNotFound(event)" width="200">
+
+            <h3 class="laptopName red" id="laptopName">Laptop name</h3>
+            <p class="description blue" id="description">this is a description</p>
             <p id="price">€</p>
-            <button class="buybutton" id="buy" onclick="buyLaptop()">Buy Now</button>
+            <button class="buybutton" id="buy" onclick="buyLaptop()">BUY NOW</button>
+
         </div>
     </div>
 
@@ -140,3 +165,4 @@
 <script src="app.js"></script>
 
 </html>
+
