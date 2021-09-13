@@ -1,0 +1,104 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+.header {
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    padding: 5px;
+}
+
+.all {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.toprow {
+    display: flex;
+    flex-direction: row;
+}
+
+.smallbox {
+    height: 20rem;
+    background-color: ghostwhite;
+    width: 16rem;
+    margin: 1rem;
+    padding: 15px;
+    flex-grow: 1;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.bigbox {
+    background-color: ghostwhite;
+    width: 100%;
+    margin: 1rem;
+    padding: 10px;
+    height: 260px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+
+}
+
+.a{
+    margin: 2rem;
+}
+
+button {
+
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 14px;
+
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 1rem;
+}
+
+button:hover {
+    background-color: cornsilk;
+}
+
+.bankbutton {
+    background-color: teal;
+}
+
+.loanbutton {
+    background-color: salmon;
+
+}
+
+.workbutton {
+    background-color: skyblue;
+
+}
+
+.repaybutton {
+    background-color: thistle;
+}
+
+.buybutton {
+    background-color: mediumseagreen;
+
+}
