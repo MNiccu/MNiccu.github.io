@@ -160,7 +160,7 @@ function updateLaptopView() {
         specString += lapTop.specs[i] + "\n"
     }
     document.getElementById("specs").innerHTML = specString
-    document.getElementById("")
+    document.getElementById("laptopName").innerHTML = lapTop.title
     //price
     document.getElementById("price").innerHTML = lapTop.price
     //image
